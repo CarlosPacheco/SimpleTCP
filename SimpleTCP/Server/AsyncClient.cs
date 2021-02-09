@@ -11,6 +11,10 @@ namespace SimpleTCP.Server
         // Create the state object.
         private NetConnection _connection;
 
+        public AsyncClient(bool enableAutoRegisterCallback = true) : base(enableAutoRegisterCallback)
+        {
+        }
+
         public override void Start(string ip, int port = 10500)
         {
             // Create a TCP/IP socket.

@@ -14,6 +14,10 @@ namespace SimpleTCP.Server
         // Thread signal.
         private ManualResetEvent allDone = new ManualResetEvent(false);
 
+        public AsyncServer(bool enableAutoRegisterCallback = true) : base(enableAutoRegisterCallback)
+        {
+        }
+
         public override void Start(string ip, int port = 10500)
         {
             // Create a TCP/IP socket.

@@ -20,11 +20,11 @@ namespace SimpleTCP.Server
         private Dictionary<TCommandType, Tuple<Type, IMessageDescriptor<TCommandType>>> _messageHandler;
         public Action<NetConnection> OnRemoteSocketDisconnected;
 
-        public AsyncPeer()
+        public AsyncPeer(bool enableAutoRegisterCallback)
         {
             _messageHandler = new Dictionary<TCommandType, Tuple<Type, IMessageDescriptor<TCommandType>>>();
             AutoAddMessageHandler();
-            AutoRegisterCallbackTo();
+            if(enableAutoRegisterCallback) AutoRegisterCallbackTo();
         }
 
         public void AddMessageHandler(TCommandType key, Tuple<Type, IMessageDescriptor<TCommandType>> value)
