@@ -17,7 +17,7 @@ namespace ConsoleServer
             _server = new AsyncServer<CommandType>();
             _server.OnRemoteSocketConnected += RemoteSocketConnected;
             _server.OnRemoteSocketDisconnected += RemoteSocketDisconnected;
-            _server.Start(string.Empty);
+            _server.Start();
 
             Console.WriteLine("\nPress ENTER to continue...");
             Console.Read();

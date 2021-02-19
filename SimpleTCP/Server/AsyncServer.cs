@@ -18,7 +18,7 @@ namespace SimpleTCP.Server
         {
         }
 
-        public override void Start(string ip, int port = 10500)
+        public override void Start(string ip = "", int port = 10500)
         {
             // Create a TCP/IP socket.
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
