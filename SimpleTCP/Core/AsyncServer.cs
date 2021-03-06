@@ -4,12 +4,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace SimpleTCP.Server
+namespace SimpleTCP.Core
 {
-    public class AsyncServer<TCommandType> : AsyncPeer<TCommandType>
+    public class AsyncServer<TCommandType> : AsyncPeer<TCommandType>, IAsyncServer<TCommandType>
        where TCommandType : struct, Enum
     {
-        public Action<NetConnection> OnRemoteSocketConnected;
+        public Action<NetConnection> OnRemoteSocketConnected { get; set; }
 
         // Thread signal.
         private ManualResetEvent allDone = new ManualResetEvent(false);

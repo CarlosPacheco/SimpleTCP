@@ -3,7 +3,7 @@ using SimpleTCP.Models;
 using System;
 using System.Collections.Generic;
 
-namespace SimpleTCP.Server
+namespace SimpleTCP.Core
 {
     public class MessageDescriptor<TMessage, TCommandType> : IMessageDescriptor<TCommandType>
         where TMessage : class

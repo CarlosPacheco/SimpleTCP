@@ -2,7 +2,7 @@
 using SimpleTCP.Models;
 using System;
 
-namespace SimpleTCP.Server
+namespace SimpleTCP.Core
 {
     public interface IMessageDescriptor<T> where T : struct, Enum
     {

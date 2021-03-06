@@ -3,9 +3,9 @@ using SimpleTCP.Models;
 using System;
 using System.Net.Sockets;
 
-namespace SimpleTCP.Server
+namespace SimpleTCP.Core
 {
-    public class AsyncClient<TCommandType> : AsyncPeer<TCommandType>
+    public class AsyncClient<TCommandType> : AsyncPeer<TCommandType>, IAsyncClient<TCommandType>
        where TCommandType : struct, Enum
     {
         // Create the state object.

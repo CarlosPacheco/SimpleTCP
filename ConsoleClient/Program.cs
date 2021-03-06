@@ -1,7 +1,7 @@
 ﻿using Shared.Enums;
 using SimpleTCP.Models;
 using Shared.Models.Messages;
-using SimpleTCP.Server;
+using SimpleTCP.Core;
 using System;
 using System.Threading;
 
@@ -10,7 +10,7 @@ namespace ConsoleClient
     class Program
     {
         //thread safe list
-        private static AsyncClient<CommandType> _server;
+        private static IAsyncClient<CommandType> _server;
 
         public static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace ConsoleClient
 
             Console.WriteLine("\nPress ENTER to continue...");
 
-            while(true)
+            while (true)
             {
                 _server.Send(new ChatMessage("Client hellooo"));
                 Thread.Sleep(new TimeSpan(0, 0, 5));

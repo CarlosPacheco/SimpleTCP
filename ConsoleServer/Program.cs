@@ -1,7 +1,7 @@
 ﻿using Shared.Models.Messages;
 using Shared.Enums;
 using SimpleTCP.Models;
-using SimpleTCP.Server;
+using SimpleTCP.Core;
 using System;
 using System.Threading;
 
@@ -10,7 +10,7 @@ namespace ConsoleServer
     class Program
     {
         //thread safe list
-        private static AsyncServer<CommandType> _server;
+        private static IAsyncServer<CommandType> _server;
 
         public static void Main(string[] args)
         {

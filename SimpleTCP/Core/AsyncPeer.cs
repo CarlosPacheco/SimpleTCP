@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Reflection;
 
-namespace SimpleTCP.Server
+namespace SimpleTCP.Core
 {
     public abstract class AsyncPeer<TCommandType> where TCommandType : struct, Enum
     {
@@ -18,7 +18,8 @@ namespace SimpleTCP.Server
         protected const int BufferSize = 1024;
 
         private Dictionary<TCommandType, Tuple<Type, IMessageDescriptor<TCommandType>>> _messageHandler;
-        public Action<NetConnection> OnRemoteSocketDisconnected;
+
+        public Action<NetConnection> OnRemoteSocketDisconnected { get; set; }
 
         public AsyncPeer(bool enableAutoRegisterCallback)
         {
